@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
 var passport = require('passport');
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy
 
@@ -51,6 +52,7 @@ passport.use(new LinkedInStrategy({
     done(null, {id: profile.id, displayName: profile.displayName, token: accessToken})
   }
 ));
+http://localhost:3000/auth/slack/callback
 
 passport.serializeUser(function(user, done) {
   done(null, user);
